@@ -1,7 +1,7 @@
+import AllCards from "../src/components/AllCards";
+import "./reset.css";
+import "./styles.css";
+
 export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome at Qraft!</h1>
-    </div>
-  );
+  return <AllCards />;
 }

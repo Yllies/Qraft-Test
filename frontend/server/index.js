@@ -10,18 +10,17 @@ app.get("/cars", (req, res) => {
     const id = i + 1;
     return { id, pictureUrl: `${URL}/pictures/${id}.jpg`, ...car };
   });
-
   if (req.query.duration) {
     availableCars = availableCars.filter(
       ({ availability }) =>
-        parseInt(req.query.duration, 10) <= availability.maxDuration
+        parseInt(req.query.duration, 10) >= availability.maxDuration
     );
   }
 
   if (req.query.distance) {
     availableCars = availableCars.filter(
       ({ availability }) =>
-        parseInt(req.query.distance, 10) <= availability.maxDistance
+        parseInt(req.query.distance, 10) >= availability.maxDistance
     );
   }
 
